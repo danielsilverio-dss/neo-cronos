@@ -6,15 +6,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TB_CRN_CAPITULO")
+@Table(name="tb_capitulo")
 public class Capitulo {
 	
 	@Id
-	@Column(name="NR_CAPITULO")
+	@Column(name="nr_capitulo")
 	private long numero;
-	@Column(name="DS_TITULO")
+	@Column(name="ds_titulo")
 	private String titulo;
-	@Column(name="DS_DESCRICAO")
+	@Column(name="ds_descricao")
 	private String descricao;
 	
 	public Capitulo() {
