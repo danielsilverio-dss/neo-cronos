@@ -1,14 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>br.com.silentlight</groupId>
-  <artifactId>cronos</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.silentlight</groupId>
+	<artifactId>cronos</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.4.RELEASE</version>
 	</parent>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
 	<dependencies>
 
@@ -36,10 +42,9 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/com.google.guava/guava 
-			 Possui métodos utilitários. Usado nesse projeto para converter
-			 Listas Iterable para ArrayList -->
+
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava Possui métodos 
+			utilitários. Usado nesse projeto para converter Listas Iterable para ArrayList -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -47,5 +52,5 @@
 		</dependency>
 
 	</dependencies>
-	
+
 </project>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Capitulos</h1>	
+	<table>
+		<thead>
+			<tr>
+				<th>Numero</th>
+				<th>Titulo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<th:block th:each="capitulo : ${capitulos}">
+				<tr>
+					<td th:text="${capitulo.numero}"></td>
+					<td th:text="${capitulo.titulo}"></td>
+				</tr>
+			</th:block>
+		</tbody>
+	</table>
+	
+	
+	<h2>Novo Capitulo</h2>
+	<form action="#" th:action="@{/capitulo}" th:object="${capitulo}" method="post">
+		<p>Número: <input type="text" th:field="*{numero}" /></p>
+		<p>Titulo: <input type="text" th:field="*{titulo}" /></p>
+		<p><input type="submit" value="Enviar" /></p>
+	</form>
+	
+</body>
+</html>
