@@ -13,7 +13,7 @@ import br.com.silentlight.cronos.entity.Personagem;
 import br.com.silentlight.cronos.service.PersonagemService;
 
 @RestController
-@RequestMapping("/personagem")
+@RequestMapping("/api/personagem")
 public class PersonagemController {
 	
 	@Autowired
