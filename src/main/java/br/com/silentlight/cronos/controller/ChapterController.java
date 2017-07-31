@@ -8,32 +8,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.silentlight.cronos.entity.Capitulo;
-import br.com.silentlight.cronos.service.CapituloService;
+import br.com.silentlight.cronos.entity.Chapter;
+import br.com.silentlight.cronos.service.ChapterService;
 
 @RestController
-@RequestMapping("/capitulo")
-public class CapituloController {
+@RequestMapping("/api/chapter")
+public class ChapterController {
 	
 	@Autowired
-	private CapituloService service;
+	private ChapterService service;
 	
 	@GetMapping
 	public ModelAndView findAll(){
-		ModelAndView mv = new ModelAndView("views/capitulos");
-		mv.addObject("capitulos", service.findAll());
-		mv.addObject("capitulo", new Capitulo());
+		ModelAndView mv = new ModelAndView("views/chapters");
+		mv.addObject("chapters", service.findAll());
+		mv.addObject("chapter", new Chapter());
 		return mv;
 	}
 	
-	@GetMapping("/{numero}")
-	public Capitulo findByNumero(@PathVariable(name="numero") long numero){
-		return service.findOne(numero);
+	@GetMapping("/{number}")
+	public Chapter findByNumero(@PathVariable(name="number") long number){
+		return service.findOne(number);
 	}
 	
 	@PostMapping
-	public ModelAndView save(Capitulo capitulo){
-		service.save(capitulo);
+	public ModelAndView save(Chapter chapter){
+		service.save(chapter);
 		return findAll();
 	}
 

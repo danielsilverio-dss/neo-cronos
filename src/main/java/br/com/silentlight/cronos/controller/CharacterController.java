@@ -9,28 +9,28 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.silentlight.cronos.entity.Evento;
-import br.com.silentlight.cronos.service.EventoService;
+import br.com.silentlight.cronos.entity.Character;
+import br.com.silentlight.cronos.service.CharacterService;
 
 @RestController
-@RequestMapping("/evento")
-public class EventoController {
+@RequestMapping("/api/character")
+public class CharacterController {
 	
 	@Autowired
-	private EventoService service;
+	private CharacterService service;
 	
 	@PostMapping
-	public void save(Evento evento){
-		service.save(evento);
+	public void save(Character character){
+		service.save(character);
 	}
 	
 	@GetMapping
-	public List<Evento> findAll(){
+	public List<Character> findAll(){
 		return service.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public Evento findOne(@PathVariable(name="id") long id){
+	public Character findOne(@PathVariable(name="id") int id){
 		return service.findOne(id);
 	}
 
