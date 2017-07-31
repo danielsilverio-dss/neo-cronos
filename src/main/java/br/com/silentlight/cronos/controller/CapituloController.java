@@ -1,10 +1,6 @@
 package br.com.silentlight.cronos.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.WebMvcProperties.View;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,26 +18,12 @@ public class CapituloController {
 	@Autowired
 	private CapituloService service;
 	
-	@GetMapping("/teste/{numero}")
-	public String testeNumero(@PathVariable(name="numero") long numero){
-		return "String="+numero;
-	}
-	
 	@GetMapping
 	public ModelAndView findAll(){
 		ModelAndView mv = new ModelAndView("views/capitulos");
 		mv.addObject("capitulos", service.findAll());
 		mv.addObject("capitulo", new Capitulo());
 		return mv;
-		/*
-		List<String> teste = new ArrayList<>();
-		teste.add("aaa");
-		teste.add("bbb");
-		
-		mv.addObject("capitulos", teste);
-		
-		return mv;
-		*/
 	}
 	
 	@GetMapping("/{numero}")
