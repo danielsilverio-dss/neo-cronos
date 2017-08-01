@@ -1,5 +1,7 @@
 package br.com.silentlight.cronos.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,11 +21,8 @@ public class ChapterController {
 	private ChapterService service;
 	
 	@GetMapping
-	public ModelAndView findAll(){
-		ModelAndView mv = new ModelAndView("views/chapters");
-		mv.addObject("chapters", service.findAll());
-		mv.addObject("chapter", new Chapter());
-		return mv;
+	public List<Chapter> findAll(){
+		return service.findAll();
 	}
 	
 	@GetMapping("/{number}")
@@ -32,9 +31,8 @@ public class ChapterController {
 	}
 	
 	@PostMapping
-	public ModelAndView save(Chapter chapter){
+	public void save(Chapter chapter){
 		service.save(chapter);
-		return findAll();
 	}
 
 }
