@@ -3,7 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
 	
 	number : DS.attr('number'),
-	title : DS.attr('title'),
-	description : DS.attr('description'),
+	title : DS.attr('string'),
+	description : DS.attr('string'),
 
 });
