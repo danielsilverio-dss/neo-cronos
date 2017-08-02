@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('chapter');
+  this.route('chapter', { path: 'chapter/:number' });
   this.route('chapters');
 });
 
