@@ -1,10 +1,13 @@
-{{#each chapter in model}}
+{{#each chapter in chapters}}
   Chapter: {{chapter.title}}
 {{else}}
-  Sorry, nobody is here.
+  No chapter found.
 {{/each}}
 
-<!--
+
+
 {{model}}
--->
+
+
+
 {{outlet}}
