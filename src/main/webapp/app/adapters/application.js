@@ -10,4 +10,5 @@ export default DS.JSONAPIAdapter.extend({
         'Accept': 'application/json'
       }
 	
+
 });

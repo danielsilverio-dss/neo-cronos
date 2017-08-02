@@ -1,13 +1,9 @@
-{{#each chapter in model}}
-  Chapter: {{chapter.title}}
+{{#each model as |chapter|}}
+	<p>Chapter: {{chapter.title}}</p>	
 {{else}}
-  No chapter found.
+ 	No chapter found.
 {{/each}}
 
 <br/>
-
-{{model}}
-
-
 
 {{outlet}}
