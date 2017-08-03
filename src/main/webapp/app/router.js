@@ -7,8 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('chapter', { path: 'chapter/:number' });
-  this.route('chapters');
+  this.route('chapters', function() {
+    this.route('new');
+    this.route('show');
+    this.route('find', {path: '/:number'});
+  });
 });
 
 export default Router;
