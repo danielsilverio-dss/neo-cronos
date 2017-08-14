@@ -1,8 +1,13 @@
 <h3>Capítulos:</h3>
-{{#each chapters as |chapter|}}
-	<p>Chapter: {{chapter.number}} {{chapter.title}}, {{chapter.description}}</p>	
-{{else}}
- 	No chapter found.
-{{/each}}
 
+<form>
+	{{input type="text" value=number}}
+	{{input type="text" value=title}}
+	{{input type="text" value=description}}
+	<button {{action 'saveChapter' number title description}} >Salvar</button>
+</form>
+
+
+{{chapters-table chapters=chapters}}
+  
 {{outlet}}

@@ -1,0 +1,24 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Número</th>
+			<th>Título</th>
+			<th>Descricao</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each chapters as |chapter|}}
+			<tr>
+				<td>{{chapter.number}}</td>
+				<td>{{chapter.title}}</td>
+				<td>{{chapter.description}}</td>
+			</tr>
+		{{else}}
+			<tr>
+				<td>No chapter Found</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+{{yield}}
